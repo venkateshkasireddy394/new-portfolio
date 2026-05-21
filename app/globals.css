@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-primary: #050810;
+  --color-background-secondary: #0b0f1e;
+  --color-card: #0f1428;
+  --color-border-line: #1e2a4a;
+  --color-accent: #6c63ff;
+  --color-accent-two: #00d4ff;
+  --color-accent-three: #ff6b6b;
+  --color-text-main: #e8eaf6;
+  --color-muted: #5a6a9a;
+
+  --font-syne: var(--font-syne), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, a, button, .cursor-pointer, [role="button"] {
+  cursor: none !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Gradient Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a8b2ff 50%, var(--color-accent-two) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-two));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations from HTML */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); }
+  50% { transform: translateY(-20px) rotateX(-5deg) rotateY(5deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0) rotateX(-8deg) rotateY(8deg); }
+  50% { transform: translateY(-15px) rotateX(5deg) rotateY(-5deg); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0) rotateX(3deg) rotateY(-10deg); }
+  50% { transform: translateY(-25px) rotateX(-3deg) rotateY(5deg); }
+}
+@keyframes scrollAnim {
+  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+}
+
+.animate-float1 { animation: float1 8s ease-in-out infinite; }
+.animate-float2 { animation: float2 10s ease-in-out infinite; }
+.animate-float3 { animation: float3 9s ease-in-out infinite; }
+.animate-float1-reverse { animation: float1 11s ease-in-out infinite reverse; }
+.animate-scroll { animation: scrollAnim 2s infinite; }

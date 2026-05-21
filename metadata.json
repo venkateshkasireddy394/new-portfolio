@@ -1,0 +1,6 @@
+{
+  "name": "Venkateswarlu Portfolio",
+  "description": "3D Portfolio for Venkateswarlu Kasireddy showing AI, Software Engineering projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
